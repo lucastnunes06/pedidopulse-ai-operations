@@ -1,5 +1,5 @@
 {
-  "dataset": "100% sintético, gerado com seed fixa; NÃO representa o iFood",
+  "dataset": "100% sintético, gerado com seed fixa; não representa operações reais",
   "seed": 42,
   "train_rows": 2400,
   "validation_rows": 800,
