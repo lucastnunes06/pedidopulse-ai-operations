@@ -1,4 +1,4 @@
-"""Geração reproduzível de pedidos SINTÉTICOS. Nenhum dado é do iFood."""
+"""Geração reproduzível de pedidos SINTÉTICOS. Não utiliza dados de operações reais."""
 from __future__ import annotations
 import numpy as np
 import pandas as pd
