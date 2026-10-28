@@ -1,0 +1,8 @@
+{
+  "suite": "RAG lexical e guardrails determinísticos (sem LLM)",
+  "retrieval_recall_at_3": 1,
+  "cases": 6,
+  "injection_detection_on_examples": 1,
+  "pii_scrubbed_on_example": true,
+  "scope": "Apenas casos de teste escritos para esta demo; não é garantia de robustez em produção."
+}
