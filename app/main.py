@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 from .service import list_orders, triage, metrics
 
 app = FastAPI(title="PedidoPulse — AI Operations Copilot", version="1.0.0",
-              description="Demonstração com dados sintéticos; sem relação com o iFood")
+              description="Demonstração com dados sintéticos; sem vínculo com plataformas reais")
 
 class TriageInput(BaseModel):
     note: str = Field(default="", max_length=500)
