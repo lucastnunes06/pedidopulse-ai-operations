@@ -1,0 +1,44 @@
+{
+  "dataset": "100% sintético, gerado com seed fixa; NÃO representa o iFood",
+  "seed": 42,
+  "train_rows": 2400,
+  "validation_rows": 800,
+  "test_rows": 800,
+  "holdout": "últimos 20% das observações, sem ajuste de hiperparâmetros no teste",
+  "threshold": 0.16,
+  "cost_assumption": "FN=5, FP=1 (pesos fictícios)",
+  "model": {
+    "precision": 0.4,
+    "recall": 0.879,
+    "f1": 0.5498,
+    "confusion_matrix": [
+      [
+        225,
+        327
+      ],
+      [
+        30,
+        218
+      ]
+    ],
+    "roc_auc": 0.7684,
+    "brier_score": 0.1717
+  },
+  "baseline": {
+    "precision": 0.401,
+    "recall": 0.629,
+    "f1": 0.4898,
+    "confusion_matrix": [
+      [
+        319,
+        233
+      ],
+      [
+        92,
+        156
+      ]
+    ]
+  },
+  "positives_test": 248,
+  "note": "Métricas em dados simulados. Não equivalem a desempenho em produção."
+}
