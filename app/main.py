@@ -2,11 +2,14 @@
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from .service import list_orders, triage, metrics
 
 app = FastAPI(title="PedidoPulse — AI Operations Copilot", version="1.0.0",
-              description="Demonstração com dados sintéticos; sem vínculo com plataformas reais")
+              description="Demonstração com dados sintéticos; sem vínculo com empresas ou operações reais")
+
+app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
 
 class TriageInput(BaseModel):
     note: str = Field(default="", max_length=500)

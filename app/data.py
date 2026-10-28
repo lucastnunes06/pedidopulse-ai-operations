@@ -1,4 +1,4 @@
-"""Geração reproduzível de pedidos SINTÉTICOS. Não utiliza dados de operações reais."""
+"""Geração reproduzível de pedidos SINTÉTICOS. Sem informações de operação real."""
 from __future__ import annotations
 import numpy as np
 import pandas as pd

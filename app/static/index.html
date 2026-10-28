@@ -1,16 +1,193 @@
-<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PedidoPulse · AI Operations Copilot</title>
-<style>
-:root{--navy:#111b2e;--navy2:#1e3049;--ink:#182339;--muted:#6e7b8c;--bg:#f6f8fb;--accent:#ff6d4a;--green:#0a9e7c;--line:#e5eaf1}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{min-height:100vh;display:grid;grid-template-columns:230px minmax(0,1fr)}aside{background:var(--navy);color:#eef3fa;padding:29px 18px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;align-items:center;gap:10px;padding:8px 12px;font-size:20px;font-weight:800;letter-spacing:-.8px}.logo{height:31px;width:31px;border-radius:10px;background:var(--accent);display:grid;place-items:center;color:white;font-size:20px}.sidetag{color:#a1b2c8;text-transform:uppercase;font-size:10px;letter-spacing:2px;padding-left:13px}.navlink{padding:13px;display:flex;gap:11px;align-items:center;background:#23364e;border:1px solid #3a4c65;border-radius:10px;font-size:13px;font-weight:650}.notereal{font-size:12px;line-height:1.65;color:#b2c0d0;background:#1b2a3d;padding:13px;border-radius:12px;margin-top:auto}.notereal strong{color:#fff}main{padding:34px 36px 50px;max-width:1470px;width:100%;margin:0 auto}.topline{display:flex;align-items:center;justify-content:space-between;gap:18px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.8px;color:#7c8aa0;font-weight:800}h1{font-size:30px;letter-spacing:-1.3px;margin:6px 0 8px}p.lead{color:var(--muted);font-size:14px;margin:0;line-height:1.5}.status{border:1px solid #cdeee1;color:#087455;border-radius:99px;background:#edfbf5;padding:9px 12px;font-size:12px;font-weight:750;white-space:nowrap}.dot{display:inline-block;width:7px;height:7px;border-radius:99px;background:#1fac84;margin-right:6px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:29px 0 22px}.stat,.panel{background:white;border:1px solid var(--line);border-radius:17px;box-shadow:0 5px 20px #19325406}.stat{padding:20px}.stat small{font-size:12px;color:var(--muted)}.stat b{display:block;font-size:28px;letter-spacing:-.8px;margin:9px 0 3px}.stat em{font-style:normal;font-size:11px;color:#738499}.red{color:#ee6748}.green{color:var(--green)}.workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(360px,.8fr);gap:18px}.panel{padding:20px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.panel h2{margin:0;font-size:16px;letter-spacing:-.3px}.pill{background:#f0f4f9;border:1px solid var(--line);padding:7px 10px;font-size:11px;color:#64758c;border-radius:20px}.tools{display:flex;gap:10px;align-items:center}.search{border:1px solid var(--line);padding:11px 13px;border-radius:9px;outline:none;width:220px;max-width:100%;font:inherit;font-size:13px}table{width:100%;border-collapse:collapse;font-size:12px}th{text-transform:uppercase;letter-spacing:.8px;color:#95a0ae;font-size:10px;text-align:left;padding:13px 8px;border-bottom:1px solid var(--line)}td{padding:13px 8px;border-bottom:1px solid #f0f2f5}tbody tr{cursor:pointer;transition:background .15s}tbody tr:hover,tbody tr.selected{background:#fff7f3}td.id{font-weight:800;color:#24364e}.risk{display:flex;align-items:center;gap:7px;font-weight:750}.riskbar{width:42px;height:5px;background:#edf1f5;border-radius:6px;overflow:hidden}.riskbar i{display:block;height:100%;background:var(--accent)}.medium{color:#9b7716}.high{color:#e24c34}.low{color:#1b9475}.triage-order{font-size:12px;color:#748298;margin:4px 0 15px}.notice{font-size:12px;background:#f1f6fa;color:#5c6e87;padding:11px 12px;border-radius:10px;line-height:1.5}.fieldlabel{font-size:12px;color:#6c7b90;font-weight:700;display:block;margin:18px 0 8px}textarea{width:100%;height:80px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit;font-size:13px}button{border:0;border-radius:9px;background:var(--navy);color:white;padding:12px 15px;font-weight:800;cursor:pointer;font-size:12px}button:hover{background:var(--navy2)}.result{margin-top:16px;line-height:1.6;white-space:normal;background:#fbfcff;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:12px}.chips{margin:10px 0;display:flex;flex-wrap:wrap;gap:6px}.chip{display:inline-block;border-radius:6px;padding:5px 7px;background:#f1f3fa;color:#536580;font-size:10px;font-weight:750}.evidence{margin:8px 0;border-top:1px solid var(--line);padding-top:9px}.evidence b{font-size:11px}.evidence p{font-size:11px;color:#77889a;margin:4px 0}.footer{margin:24px 0;color:#8190a3;font-size:11px}.caption{font-size:11px;color:#98a3b4;line-height:1.6;margin-top:14px}@media(max-width:1100px){.shell{grid-template-columns:1fr}aside{display:none}main{padding:24px 17px}.workspace{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:580px){.stats{grid-template-columns:1fr 1fr;gap:9px}.stat{padding:13px}.stat b{font-size:23px}.topline{align-items:flex-start}h1{font-size:23px}.panel{padding:14px}.search{width:130px}th:nth-child(3),td:nth-child(3){display:none}}
-</style></head><body><div class="shell"><aside><div class="brand"><span class="logo">↗</span> PedidoPulse</div><div class="sidetag">AI OPERATIONS LAB</div><div class="navlink">◫ &nbsp; Central de operações</div><div class="sidetag">CAMADAS TÉCNICAS</div><div style="font-size:13px;line-height:2.8;color:#bdc9d7;padding:0 14px">◉ &nbsp; Classificação de risco<br>▧ &nbsp; Recuperação RAG<br>◈ &nbsp; Guardrails e revisão humana<br>▤ &nbsp; Avaliação e métricas</div><div class="notereal"><strong>Ambiente de demonstração</strong><br>Pedidos e políticas fictícios. Nenhuma ação é executada em sistemas externos. Projeto independente.</div></aside><main><div class="topline"><div><div class="eyebrow">DEMO · MACHINE LEARNING + RAG</div><h1>Central inteligente de operações</h1><p class="lead">Antecipe atrasos, recupere políticas relevantes e investigue decisões com rastreabilidade.</p></div><div class="status"><span class="dot"></span>Simulação ativa</div></div>
-<div class="stats"><div class="stat"><small>Pedidos simulados</small><b id="all">–</b><em>Base sintética, seed fixa</em></div><div class="stat"><small>Pedidos acima do limiar</small><b class="red" id="high">–</b><em>Priorizados para revisão</em></div><div class="stat"><small>ROC-AUC no teste</small><b id="auc">–</b><em>Classificação • holdout sintético</em></div><div class="stat"><small>Recall no teste</small><b class="green" id="recall">–</b><em>Modelo supervisionado</em></div></div>
-<div class="workspace"><section class="panel"><div class="panelhead"><h2>Fila de pedidos por risco</h2><div class="tools"><input class="search" id="filter" placeholder="Buscar pedido…" aria-label="Buscar pedido"><span class="pill">Risco ↓</span></div></div><div style="overflow-x:auto"><table><thead><tr><th>Pedido</th><th>Risco de atraso</th><th>Clima</th><th>Distância</th><th>Fila</th></tr></thead><tbody id="orders"></tbody></table></div><p class="caption">Clique em qualquer linha para receber uma recomendação explicável. Risco não significa atraso confirmado.</p></section><section class="panel"><div class="panelhead"><h2>Copiloto de triagem</h2><span class="pill">Políticas + guardrails</span></div><div class="triage-order" id="selected">Selecione um pedido à esquerda</div><div class="notice">As decisões são simuladas. Reembolsos, cancelamentos e mensagens a clientes sempre exigem processo externo e revisão humana.</div><label class="fieldlabel" for="note">Contexto adicional (opcional)</label><textarea id="note" placeholder="Ex.: o restaurante relatou fila no preparo…"></textarea><div style="display:flex;gap:9px;margin-top:10px"><button id="run">Gerar triagem</button><span class="pill" style="align-self:center">Modo offline reproduzível</span></div><div class="result" id="result">Selecione um pedido para ver as evidências e ações recomendadas.</div></section></div><div class="footer">PedidoPulse © Projeto autoral de portfólio · Dados e políticas 100% fictícios · Sem conexão com sistemas ou operações reais.</div></main></div>
-<script>
-let orderList=[], current='';const fmt=n=>`${Math.round(n*100)}%`;
-function setOrder(id){current=id;document.querySelectorAll('tbody tr').forEach(tr=>tr.classList.toggle('selected',tr.dataset.id===id));document.getElementById('selected').textContent='Pedido selecionado: '+id;}
-function draw(){const q=document.getElementById('filter').value.toLowerCase();document.getElementById('orders').innerHTML=orderList.filter(o=>o.order_id.toLowerCase().includes(q)).map(o=>`<tr data-id="${o.order_id}"><td class="id">${o.order_id}</td><td><div class="risk ${o.risk_label==='Alto'?'high':'low'}">${fmt(o.risk)} <span class="riskbar"><i style="width:${o.risk*100}%"></i></span></div></td><td>${o.weather}</td><td>${o.distance_km.toFixed(1)} km</td><td>${o.kitchen_queue}</td></tr>`).join('');document.querySelectorAll('tbody tr').forEach(tr=>tr.addEventListener('click',()=>{setOrder(tr.dataset.id);run()}));if(current)setOrder(current)}
-async function run(){if(!current)return;const target=document.getElementById('result');target.textContent='Consultando políticas e calculando recomendação…';try{let r=await fetch('/api/triage/'+current,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:document.getElementById('note').value,mode:'offline'})});let d=await r.json();if(!r.ok)throw new Error(d.detail||'Falha');target.innerHTML='';let p=document.createElement('p');p.textContent=d.message;target.append(p);let actions=document.createElement('div');actions.className='chips';(d.actions||[]).forEach(a=>{let el=document.createElement('span');el.className='chip';el.textContent=a.replaceAll('_',' ');actions.append(el)});target.append(actions);(d.citations||[]).forEach(c=>{let s=document.createElement('div');s.className='evidence';let b=document.createElement('b');b.textContent=`[${c.id}] ${c.title} · similaridade ${c.score}`;let body=document.createElement('p');body.textContent=c.text;s.append(b,body);target.append(s)})}catch(e){target.textContent='Erro: '+e.message}}
-document.getElementById('filter').addEventListener('input',draw);document.getElementById('run').addEventListener('click',run);
-Promise.all([fetch('/api/orders').then(r=>r.json()),fetch('/api/metrics').then(r=>r.json())]).then(([data,m])=>{orderList=data.orders;document.getElementById('all').textContent=orderList.length;document.getElementById('high').textContent=orderList.filter(o=>o.risk_label==='Alto').length;document.getElementById('auc').textContent=m.model.roc_auc.toFixed(3);document.getElementById('recall').textContent=fmt(m.model.recall);draw();setOrder(orderList[0].order_id);run()}).catch(e=>document.getElementById('result').textContent='Execute primeiro: python scripts/train.py • '+e.message);
-</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   PedidoPulse &middot; AI Operations Copilot
+  </title>
+  <link href="/static/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="shell">
+   <aside>
+    <div class="brand">
+     <span class="logo">
+      &nearrow;
+     </span>
+     PedidoPulse
+    </div>
+    <div class="sidetag">
+     PROT&Oacute;TIPO DE ENGENHARIA
+    </div>
+    <div class="navlink">
+     ◫ &nbsp; Central de opera&ccedil;&otilde;es
+    </div>
+    <div class="sidetag">
+     CAMADAS T&Eacute;CNICAS
+    </div>
+    <div class="nav-details">
+     ◉ &nbsp; Classifica&ccedil;&atilde;o de risco
+     <br/>
+     ▧ &nbsp; Busca de pol&iacute;ticas
+     <br/>
+     ◈ &nbsp; Guardrails e revis&atilde;o humana
+     <br/>
+     ▤ &nbsp; Avalia&ccedil;&atilde;o e m&eacute;tricas
+    </div>
+    <div class="notereal">
+     <strong>
+      Ambiente de demonstra&ccedil;&atilde;o
+     </strong>
+     <br/>
+     Pedidos e pol&iacute;ticas fict&iacute;cios. Nenhuma a&ccedil;&atilde;o &eacute; executada em sistemas externos. Projeto independente e fict&iacute;cio.
+    </div>
+   </aside>
+   <main>
+    <div class="topline">
+     <div>
+      <div class="eyebrow">
+       SIMULA&Ccedil;&Atilde;O &middot; MACHINE LEARNING + BUSCA DE POL&Iacute;TICAS
+      </div>
+      <h1>
+       Central inteligente de opera&ccedil;&otilde;es
+      </h1>
+      <p class="lead">
+       Investigue risco de atraso, veja as pol&iacute;ticas consultadas e revise as recomenda&ccedil;&otilde;es.
+      </p>
+     </div>
+     <div class="status">
+      <span class="dot">
+      </span>
+      Simula&ccedil;&atilde;o ativa
+     </div>
+    </div>
+    <div class="stats">
+     <div class="stat">
+      <small>
+       Pedidos simulados
+      </small>
+      <b id="all">
+       &ndash;
+      </b>
+      <em>
+       Base sint&eacute;tica, seed fixa
+      </em>
+     </div>
+     <div class="stat">
+      <small>
+       Pedidos acima do limiar
+      </small>
+      <b class="red" id="high">
+       &ndash;
+      </b>
+      <em>
+       Priorizados para revis&atilde;o
+      </em>
+     </div>
+     <div class="stat">
+      <small>
+       ROC-AUC no teste
+      </small>
+      <b id="auc">
+       &ndash;
+      </b>
+      <em>
+       Classifica&ccedil;&atilde;o &bull; holdout sint&eacute;tico
+      </em>
+     </div>
+     <div class="stat">
+      <small>
+       Recall no teste
+      </small>
+      <b class="green" id="recall">
+       &ndash;
+      </b>
+      <em>
+       Modelo supervisionado
+      </em>
+     </div>
+    </div>
+    <div class="workspace">
+     <section class="panel">
+      <div class="panelhead">
+       <h2>
+        Fila de pedidos por risco
+       </h2>
+       <div class="tools">
+        <input aria-label="Buscar pedido" class="search" id="filter" placeholder="Buscar pedido&hellip;"/>
+        <span class="pill">
+         Risco &darr;
+        </span>
+       </div>
+      </div>
+      <div class="orders-scroll">
+       <table>
+        <thead>
+         <tr>
+          <th>
+           Pedido
+          </th>
+          <th>
+           Risco de atraso
+          </th>
+          <th>
+           Clima
+          </th>
+          <th>
+           Dist&acirc;ncia
+          </th>
+          <th>
+           Fila
+          </th>
+         </tr>
+        </thead>
+        <tbody id="orders">
+        </tbody>
+       </table>
+      </div>
+      <p class="caption">
+       Selecione um pedido para analisar o risco e consultar as pol&iacute;ticas. Risco n&atilde;o significa atraso confirmado.
+      </p>
+     </section>
+     <section class="panel">
+      <div class="panelhead">
+       <h2>
+        Copiloto de triagem
+       </h2>
+       <span class="pill">
+        Pol&iacute;ticas + guardrails
+       </span>
+      </div>
+      <div class="triage-order" id="selected">
+       Selecione um pedido &agrave; esquerda
+      </div>
+      <div class="notice">
+       As decis&otilde;es s&atilde;o simuladas. Reembolsos, cancelamentos e mensagens a clientes sempre exigem processo externo e revis&atilde;o humana.
+      </div>
+      <label class="fieldlabel" for="note">
+       Contexto adicional (opcional)
+      </label>
+      <textarea id="note" placeholder="Ex.: o restaurante relatou fila no preparo&hellip;"></textarea>
+      <div class="actions-bar">
+       <button id="run" type="button">
+        Analisar pedido
+       </button>
+       <span class="pill">
+        Modo offline reproduz&iacute;vel
+       </span>
+      </div>
+      <div class="result" id="result">
+       Selecione um pedido para ver as evid&ecirc;ncias e a&ccedil;&otilde;es recomendadas.
+      </div>
+     </section>
+    </div>
+    <div class="footer">
+     PedidoPulse &copy; Projeto de estudo &middot; Dados e pol&iacute;ticas 100% fict&iacute;cios &middot; Sem v&iacute;nculo com servi&ccedil;os ou opera&ccedil;&otilde;es reais.
+    </div>
+   </main>
+  </div>
+  <script defer="" src="/static/app.js">
+  </script>
+ </body>
+</html>

@@ -1,5 +1,6 @@
 name: tests
 on: [push, pull_request]
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -8,6 +9,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
-      - run: pytest -q
-      - run: python scripts/evaluate_rag.py
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run automated tests
+        run: pytest -q
+      - name: Reproduce sensitivity study
+        run: |
+          python -m scripts.threshold_experiment
+          git diff --exit-code -- artifacts/threshold_study.json
+      - name: Evaluate lexical retrieval
+        run: python scripts/evaluate_rag.py

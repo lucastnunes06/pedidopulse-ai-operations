@@ -1,0 +1,101 @@
+{
+  "scope": "Sensitivity experiment; 100% synthetic data and hypothetical costs",
+  "split": "chronological: train 2400, validation 800, test 800",
+  "choice": "threshold selected on validation only; test held out",
+  "candidate_thresholds": [
+    0.12,
+    0.14,
+    0.16,
+    0.18,
+    0.2,
+    0.22,
+    0.24,
+    0.26,
+    0.28,
+    0.3,
+    0.32,
+    0.34,
+    0.36,
+    0.38,
+    0.4,
+    0.42,
+    0.44,
+    0.46,
+    0.48,
+    0.5,
+    0.52,
+    0.54,
+    0.56,
+    0.58,
+    0.6,
+    0.62,
+    0.64
+  ],
+  "scenarios": [
+    {
+      "false_negative_weight": 1,
+      "false_positive_weight": 1,
+      "threshold_from_validation": 0.46,
+      "validation_cost_units": 195,
+      "test_precision": 0.6369,
+      "test_recall": 0.4032,
+      "test_f1": 0.4938,
+      "test_confusion": {
+        "tp": 100,
+        "fp": 57,
+        "tn": 495,
+        "fn": 148
+      },
+      "test_review_queue": 157
+    },
+    {
+      "false_negative_weight": 3,
+      "false_positive_weight": 1,
+      "threshold_from_validation": 0.28,
+      "validation_cost_units": 372,
+      "test_precision": 0.5415,
+      "test_recall": 0.7097,
+      "test_f1": 0.6143,
+      "test_confusion": {
+        "tp": 176,
+        "fp": 149,
+        "tn": 403,
+        "fn": 72
+      },
+      "test_review_queue": 325
+    },
+    {
+      "false_negative_weight": 5,
+      "false_positive_weight": 1,
+      "threshold_from_validation": 0.16,
+      "validation_cost_units": 447,
+      "test_precision": 0.4,
+      "test_recall": 0.879,
+      "test_f1": 0.5498,
+      "test_confusion": {
+        "tp": 218,
+        "fp": 327,
+        "tn": 225,
+        "fn": 30
+      },
+      "test_review_queue": 545
+    },
+    {
+      "false_negative_weight": 10,
+      "false_positive_weight": 1,
+      "threshold_from_validation": 0.12,
+      "validation_cost_units": 564,
+      "test_precision": 0.3683,
+      "test_recall": 0.9355,
+      "test_f1": 0.5285,
+      "test_confusion": {
+        "tp": 232,
+        "fp": 398,
+        "tn": 154,
+        "fn": 16
+      },
+      "test_review_queue": 630
+    }
+  ],
+  "note": "The model was already trained with seed 42. No retraining or production impact claim."
+}
