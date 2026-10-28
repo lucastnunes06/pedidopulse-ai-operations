@@ -3,7 +3,7 @@
 This runs offline: HTML, CSS and JS come from app/static, and mocked HTTP responses
 come from the actual Python service functions. No live server or third-party API.
 
-Dependencies: pip install playwright pillow; python -m playwright install chromium
+Dependencies: pip install -r requirements-preview.txt; python -m playwright install chromium
 """
 from __future__ import annotations
 

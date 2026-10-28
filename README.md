@@ -12,7 +12,17 @@ O PedidoPulse surgiu como um estudo sobre priorização de uma fila de entregas 
 
 ![Painel renderizado no Chromium com interface real e respostas sintéticas do serviço](docs/dashboard.png)
 
-A captura e o GIF foram produzidos em navegador com os arquivos reais da interface e respostas calculadas pelo serviço local (sem conexão externa). O painel permite escolher um pedido, adicionar uma observação e conferir risco estimado, ações sugeridas e trechos de políticas recuperados. [Veja uma demonstração curta](docs/triage-demo.gif).
+A captura e o GIF foram produzidos em navegador com os arquivos reais da interface e respostas calculadas pelo serviço local (sem conexão externa). O painel permite escolher um pedido, adicionar uma observação e conferir risco estimado, ações sugeridas e trechos de políticas recuperados. [Veja a demonstração em GIF](docs/triage-demo.gif).
+
+Para reproduzir a captura, depois de instalar as dependências principais:
+
+```bash
+pip install -r requirements-preview.txt
+python -m playwright install chromium
+python -m docs.capture_dashboard
+```
+
+As imagens usam a interface real e respostas geradas pelo próprio serviço com dados sintéticos; o processo de captura substitui chamadas HTTP por fixtures locais.
 
 ## O que está implementado
 
