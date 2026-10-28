@@ -49,7 +49,7 @@ def train(seed: int = 42, n: int = 4000) -> dict:
             result["brier_score"] = round(float(brier_score_loss(y, prob)), 4)
         return result
     metrics = {
-        "dataset": "100% sintético, gerado com seed fixa; NÃO representa o iFood",
+        "dataset": "100% sintético, gerado com seed fixa; não representa operações reais",
         "seed": seed, "train_rows": len(tr), "validation_rows": len(val), "test_rows": len(test),
         "holdout": "últimos 20% das observações, sem ajuste de hiperparâmetros no teste",
         "threshold": round(threshold, 3), "cost_assumption": "FN=5, FP=1 (pesos fictícios)",
